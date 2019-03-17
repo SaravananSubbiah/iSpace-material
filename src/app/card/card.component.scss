@@ -1,0 +1,68 @@
+a {
+    text-decoration: none;
+    margin: 20px;
+  }
+a:hover {
+    text-decoration: none;
+  }
+.card-background {
+    width: 360px;
+    background-color: #f0eef4;
+    padding: 30px;
+}
+
+.card {
+    display: flex;
+    background-color: #fff;
+    transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    border-radius: 10px;
+    width: 300px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+.card-img {
+    height: 300px;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 50px;
+    border: 1px solid orange;
+}
+
+.card-avatar {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+.card> ul {
+    padding-top: 15px;
+    padding-top: 15px;
+    list-style-type: square;
+    list-style-position: outside;
+    margin: 0;
+}
+
+.highlights {
+    font-size: 20px;
+    font-style: bold;
+    color: blue;
+    padding: 10px 10px 0px 20px;
+}
+
+.enquire2 { 
+    width: 170px;
+    height: 170px;
+    font-size: 25px;
+  }
+
+  .example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }

@@ -1,0 +1,47 @@
+.main {
+    display: flex;
+    flex-direction: column; 
+}
+
+.wrapper {
+    width: 90%;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.inner-wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    opacity: 0;
+    transition: all .2s ease-in-out;
+}
+
+.show-scroll {
+    opacity: 1;
+}
+button {
+    background: black;
+    color: white;
+    padding: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}
+.button24 {
+    width: 170px;
+    height: 170px;
+    font-size: 25px;
+  }

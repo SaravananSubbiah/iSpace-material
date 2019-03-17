@@ -1,0 +1,18 @@
+<section fxLayout="row" fxFlex="1 1 100%"  fxLayoutGap="3" fxLayoutAlign="center center">
+    <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{name}}</mat-card-title>
+          <mat-card-subtitle>map</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+           Location : Zone1, 1st parking
+          </p>
+        </mat-card-content>
+        <mat-card-actions fxLayout="row" fxLayoutAlign="space-around">
+            <button (click)="vote(true)" mat-fab [disabled]="upVote">+</button>
+            <button (click)="vote(false)" mat-fab [disabled]="downVote">-</button>
+        </mat-card-actions>
+      </mat-card>
+  </section>

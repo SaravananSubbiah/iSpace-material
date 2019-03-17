@@ -1,0 +1,13 @@
+<a routerLink="/smartparking" class="card-link">
+  <div class="card-background">
+    <div class="card" fxLayout="column" fxLayoutWrap fxLayoutGap="0.5" fxLayoutAlign="center center">
+      <div>
+          <button mat-fab [color]="bulletColor" class="enquire2" (click)="openDialog()">{{bulletHead}}</button>
+      </div>
+      <ul>
+        <li *ngFor="let row of bulletPoints">{{row}}</li>
+      </ul>
+    </div>
+  </div>
+</a>
+

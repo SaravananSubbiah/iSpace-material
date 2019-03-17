@@ -1,0 +1,13 @@
+.message {
+    color: #1976d2;
+    font-size: 60px;
+    position: static;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.message::before
+{
+    content: url('../../assets/images/404.jpg');
+}

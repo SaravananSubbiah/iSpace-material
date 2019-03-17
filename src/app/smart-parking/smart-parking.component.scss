@@ -1,0 +1,30 @@
+.inner-wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border: 1px solid #efefef;
+    border-radius: 8px;
+    color: #000;
+    margin-top: 20px; margin-bottom: 20px;
+   
+}
+
+th {
+    border: 1px solid #e2e2e2;
+    text-align: center;
+    padding: 8px;
+}
+tr:nth-child(even) {
+    background-color: #efefef;
+}
+td {
+    border: 1px solid #e2e2e2;
+    text-align: left;
+    padding: 8px;
+   
+}
+

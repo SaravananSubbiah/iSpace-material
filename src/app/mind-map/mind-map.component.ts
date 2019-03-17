@@ -171,9 +171,34 @@ export class MindMapComponent implements OnDestroy, OnInit {
   ngOnInit() {
     this.mindMap = MindMapMain.show(option, mind);
   }
-  
+
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
+  }
+
+  removeNode() {
+    const selectedNode = this.mindMap.getSelectedNode();
+    const selectedId = selectedNode && selectedNode.id;
+ 
+    if (!selectedId) {
+      return;
+    }
+    this.mindMap.removeNode(selectedId);
+  }
+ 
+  addNode() {
+    const selectedNode = this.mindMap.getSelectedNode();
+    if (!selectedNode) {
+      return;
+    }
+ 
+    //const nodeId = customizeUtil.uuid.newid();
+    //this.mindMap.addNode(selectedNode, nodeId);
+  }
+ 
+  getMindMapData() {
+    const data = this.mindMap.getData().data;
+    console.log('data: ', data);
   }
 
   shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(h => h.test(window.location.host));

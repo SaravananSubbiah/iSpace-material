@@ -34,3 +34,19 @@
     flex: 1 0 auto;
   }
   
+  .bagyaa-style-bottom-banner {
+    width: 100%;
+    
+    margin-top: 20px;
+    background: url(../../assets/images/logo.png) repeat-x bottom left !important;
+    height: 645px;
+    padding: 20px;
+}
+
+.banners {
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #f0eef4;
+}

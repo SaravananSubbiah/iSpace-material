@@ -1,0 +1,67 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 200px">Day</th>
+        <th style="width: 200px">Breakfast</th>
+        <th style="width: 200px">Lunch</th>
+        <th style="min-width: 100px">Dinner</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of messmenus">
+        <td>{{ row.dayofweek }}</td>
+        <td>{{ row.menu.breakfast }}</td>
+        <td>{{ row.menu.lunch | slice: 0:20 }}</td>
+        <td>
+          {{ row.menu.dinner | slice: 0:20 }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="32px">
+  <h2>Parking Zone: A ({{ total }})</h2>
+  <h1 >
+  <button
+    mat-raised-button
+    color="primary"
+    [matBadge]="agreed"
+    matBadgePosition="before"
+    matBadgeColor="accent"
+  >
+    Occupied
+  </button>
+  </h1>
+  <h1>
+  <button
+    mat-raised-button
+    color="primary"
+    [matBadge]="total - agreed"
+    matBadgePosition="before"
+    matBadgeColor="accent"
+  >
+    Available
+  </button>
+  </h1>
+  <button mat-fab (click)="openDialog()">Detail</button>
+</div>
+
+<div
+  fxLayout="row wrap"
+  fxLayoutAlign="center center"
+  fxLayoutGap="32px grid"
+  style="width: 70vw;"
+>
+  <ispace-voter
+    *ngFor="let voter of voters"
+    [total]="total"
+    [agreed]="agreed"
+    [name]="voter"
+    (voted)="onVoted($event)"
+  >
+  </ispace-voter>
+</div>
+<div>
+  <ispace-video></ispace-video>
+</div>

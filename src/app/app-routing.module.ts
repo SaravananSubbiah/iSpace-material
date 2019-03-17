@@ -3,16 +3,25 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SmartParkingComponent } from './smart-parking/smart-parking.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 import { MindMapComponent } from './mind-map/mind-map.component';
+import { SelectivePreloadingStrategyService } from './shared/services/selective-preloading-strategy.service';
 
 const routes: Routes = [
   {
     path: 'mindmap',
     component: MindMapComponent
   },
-  
+  {
+    path: '',
+    component: SmartParkingComponent
+  },
+  {
+    path: 'smartparking',
+    component: SmartParkingComponent
+  },
 //   { path: 'signin', component: SigninComponent },
 //   { path: 'register', component: RegisterUserComponent },
 //   { path: 'authenticated', component: AuthenticatedUserComponent,
@@ -72,6 +81,12 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
+//   imports: [RouterModule.forRoot(routes, {
+//     enableTracing: true,
+//     useHash: true,
+//     preloadingStrategy: SelectivePreloadingStrategyService
+// })],
+// providers: [SelectivePreloadingStrategyService],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

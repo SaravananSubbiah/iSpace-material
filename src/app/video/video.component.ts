@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { EmbedVideoService } from 'ngx-embed-video';
 
 @Component({
@@ -7,6 +7,7 @@ import { EmbedVideoService } from 'ngx-embed-video';
   styleUrls: ['./video.component.scss']
 })
 export class VideoComponent implements OnInit {
+  @Input() url: string;
   vimeoUrl = 'https://vimeo.com/197933516';
   youtubeUrl = 'https://www.youtube.com/watch?v=iHhcHTlGtRs';
   dailymotionUrl =

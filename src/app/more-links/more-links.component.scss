@@ -1,0 +1,22 @@
+$contentWidth: 80%;
+.mat-expansion-panel {
+  padding: 15px;
+}
+.panel-header {
+  font-size: 18px;
+}
+.mat-card {
+  width : $contentWidth;
+}
+.mat-icon {
+  font-size: 70px;
+}
+.smart-city {
+  background-image: url('/src/assets/images/logo.png');
+  background-repeat: no-repeat;
+  width: 50%
+}
+
+.smart-city-desc {
+  width: 50%
+}

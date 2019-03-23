@@ -1,40 +1,75 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-  <mat-toolbar color="primary" class="example-toolbar">
-    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-    <h1 class="example-app-name"><a href="https://discoveryspot.com/">Discovery Spot</a></h1>
+  <mat-toolbar color="primary" class="example-toolbar" fxLayout="row" fxLayoutAlign="space-between center">
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
+        <button mat-icon-button (click)="snav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+
+        <button mat-button [matMenuTriggerFor]="menu">Go Home  <mat-icon>home</mat-icon></button>
+        <mat-menu #menu="matMenu">
+          <a href="https://discoveryspot.com/" mat-menu-item>Discovery Spot</a>
+          <a href="http://ispaceinc.net/" mat-menu-item>iSpace</a>
+          <button mat-menu-item>UWF</button>
+        </mat-menu>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="20px">
+        <button mat-raised-button color="primary" routerLink="/">About</button>
+        <button mat-raised-button color="accent" routerLink="/enquiry">Help</button>
+        <button mat-raised-button routerLink="/about-us">Login</button>
+        <button mat-raised-button routerLink="/register">Register</button>
+        <button mat-raised-button routerLink="/register2">Register2</button>
+    </div>
   </mat-toolbar>
 
-  <mat-sidenav-container class="example-sidenav-container"
-                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
-                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
-      <mat-nav-list>          
+  <mat-sidenav-container
+    class="example-sidenav-container"
+    [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
+  >
+    <mat-sidenav
+      #snav
+      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56"
+    >
+      <mat-nav-list>
         <a mat-list-item routerLink="/smartparking">smartparking</a>
-        <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a>
+        <a mat-list-item routerLink="/smartparking">Menu2</a>
+        <a mat-list-item routerLink="/smartparking">Menu3</a>
+        <a mat-list-item routerLink="/smartparking">Menu4</a>
+        <a mat-list-item routerLink="/smartparking">Menu5</a>
+        <a mat-list-item routerLink="/smartparking">Menu6</a>
+        <!-- <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{
+          nav
+        }}</a> -->
       </mat-nav-list>
     </mat-sidenav>
 
     <mat-sidenav-content>
-        <!-- <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5" fxLayoutAlign="space-evenly">
-        <button mat-button color="primary">Hello</button>
-        <button mat-raised-button color="primary">Hello</button>
-        <mat-slider></mat-slider>        
-        </div> -->
-<section fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.1" fxLayoutAlign="center center">
-    <ispace-card [cardInput]="'features'"></ispace-card>
-    <ispace-card [cardInput]="'highlights'"></ispace-card>
-    <ispace-card [cardInput]="'rules'"></ispace-card>
-</section>
-<section fxLayout="row" fxLayoutGap="0.1" fxLayoutAlign=" center">
-    <p *ngFor="let content of fillerContent">{{content}}</p>
-</section>
-        
-     
+        <div  fxLayout="column" fxLayoutAlign="start center">
+         <div fxLayout="column" fxLayoutAlign="space-between center" class="home-backdrop">
+            <img src='./../../assets/images/home.png' class="md-card-image" alt="image caption"/>
 
+        </div>
+        <ispace-more-links></ispace-more-links>
+      <section
+        fxLayout="row"
+        fxLayout.xs="column"
+        fxLayoutWrap
+        fxLayoutGap="0.1"
+        fxLayoutAlign="center center"
+      >
+        <ispace-card [cardInput]="'features'"></ispace-card>
+        <ispace-card [cardInput]="'highlights'"></ispace-card>
+        <ispace-card [cardInput]="'rules'"></ispace-card>
+      </section>
+      <!-- <section fxLayout="row" fxLayoutGap="0.1" fxLayoutAlign=" center">
+        <p *ngFor="let content of fillerContent">{{ content }}</p>
+      </section> -->
+
+    </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
-
 
 <!-- Copyright 2018 Google Inc. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that

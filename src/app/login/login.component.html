@@ -1,0 +1,46 @@
+<mat-card fxLayout="column" fxLayoutAlign="center center">
+  <mat-card-header>
+    <mat-card-title>Login</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <!-- put the form here -->
+    <div class="example-container">
+      <mat-divider></mat-divider>
+      <form class="example-container" [formGroup]="form">
+        <mat-form-field [floatLabel]="form.value.studentname">
+          <mat-label>Student Name</mat-label>
+          <input
+            matInput
+            placeholder="Enter your name*"
+            formControlName="studentname"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="your email"
+            type="email"
+            formControlName="email"
+            required
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="your password"
+            type="password"
+            formControlName="password"
+            required
+          />
+        </mat-form-field>
+      </form>
+    </div>
+    <mat-divider></mat-divider>
+  </mat-card-content>
+  <mat-card-actions>
+    <!-- put buttons here -->
+    <button mat-raised-button color="primary" (click)="login(form.value)">
+      Login
+    </button>
+  </mat-card-actions>
+</mat-card>

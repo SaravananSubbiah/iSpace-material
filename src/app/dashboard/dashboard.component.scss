@@ -7,36 +7,44 @@
     left: 0;
     right: 0;
   }
-  
   p {
     padding: 15px;
   }
-  
+  .md-card-image {
+    padding: 5px;
+    height: 550px;
+    width:800px;
+  }
+
+  .mat-toolbar-single-row {
+    height: 72px;
+  }
   .example-is-mobile .example-toolbar {
     position: fixed;
+    width: 100%;
     /* Make sure the toolbar will stay on top of the content as it scrolls past. */
     z-index: 2;
   }
-  
+
   h1.example-app-name {
     margin-left: 8px;
   }
-  
+
   .example-sidenav-container {
     /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
        causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
     flex: 1;
   }
-  
+
   .example-is-mobile .example-sidenav-container {
     /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
        `<body>` to be our scrolling element for mobile layouts. */
     flex: 1 0 auto;
   }
-  
+
   .bagyaa-style-bottom-banner {
     width: 100%;
-    
+
     margin-top: 20px;
     background: url(../../assets/images/logo.png) repeat-x bottom left !important;
     height: 645px;
@@ -44,7 +52,7 @@
 }
 
 .banners {
-    display: flex; 
+    display: flex;
     flex-direction: row;
     justify-content: center;
     border-radius: 10px;

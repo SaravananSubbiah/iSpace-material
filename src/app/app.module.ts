@@ -2,9 +2,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
 import { EmbedVideo } from 'ngx-embed-video';
+import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 
 
 
@@ -18,6 +20,12 @@ import { SmartParkingComponent } from './smart-parking/smart-parking.component';
 import { CardComponent } from './card/card.component';
 import { VoterComponent } from './voter/voter.component';
 import { EnquiryDialogComponent } from './enquiry-dialog/enquiry-dialog.component';
+import { LessonsListComponent } from './lessons-list/lessons-list.component';
+import { LessonComponent, DialogOverviewExampleDialog } from './lesson/lesson.component';
+import { MoreLinksComponent } from './more-links/more-links.component';
+import { RegisterComponent } from './register/register.component';
+import { Register2Component } from './register2/register2.component';
+import { LoginComponent } from './login/login.component';
 
 
 import { HttpClientModule } from '@angular/common/http';
@@ -32,8 +40,24 @@ import { HttpClientModule } from '@angular/common/http';
     SmartParkingComponent,
     CardComponent,
     VoterComponent,
-    EnquiryDialogComponent
+    EnquiryDialogComponent,
+    LessonsListComponent,
+    LessonComponent,
+    DialogOverviewExampleDialog,
+    MoreLinksComponent,
+    RegisterComponent,
+    Register2Component,
+    LoginComponent,
   ],
+  exports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  entryComponents: [
+    DialogOverviewExampleDialog,
+    EnquiryDialogComponent
+],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -41,9 +65,11 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     MaterialModule,
     HttpClientModule,
-    EmbedVideo.forRoot()
+    EmbedVideo.forRoot(),
+    ReactiveFormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ FormBuilder ],
+  bootstrap: [AppComponent
+  ]
 })
 export class AppModule { }

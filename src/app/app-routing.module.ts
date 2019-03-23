@@ -4,24 +4,45 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SmartParkingComponent } from './smart-parking/smart-parking.component';
+import { LessonsListComponent } from './lessons-list/lessons-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { RegisterComponent } from './register/register.component';
+import { Register2Component } from './register2/register2.component';
+import { LoginComponent } from './login/login.component';
 
 import { MindMapComponent } from './mind-map/mind-map.component';
 import { SelectivePreloadingStrategyService } from './shared/services/selective-preloading-strategy.service';
 
 const routes: Routes = [
   {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
     path: 'mindmap',
     component: MindMapComponent
   },
   {
     path: '',
-    component: SmartParkingComponent
+    component: DashboardComponent
   },
   {
     path: 'smartparking',
     component: SmartParkingComponent
   },
+  {
+    path: 'lessons-list',
+    component: LessonsListComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
+  },
+  {
+    path: 'register2',
+    component: Register2Component
+  },
+
 //   { path: 'signin', component: SigninComponent },
 //   { path: 'register', component: RegisterUserComponent },
 //   { path: 'authenticated', component: AuthenticatedUserComponent,
@@ -31,7 +52,7 @@ const routes: Routes = [
 //   //     { path: '', canActivateChild: [AuthGuard],
 //   //       children: [
 //   //         { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-          
+
 //   //       ] }
 //   //     ] },
 //   {
@@ -57,7 +78,7 @@ const routes: Routes = [
 //   {
 //     path: 'enquiry',
 //     component: EnquiryComponent
-//   },  
+//   },
 //   //{path: 'post-detail/:userId', component : PostDetailComponent }
 //   {
 //     path: 'school-detail/:schoolId',
@@ -80,13 +101,13 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-//   imports: [RouterModule.forRoot(routes, {
-//     enableTracing: true,
-//     useHash: true,
-//     preloadingStrategy: SelectivePreloadingStrategyService
-// })],
-// providers: [SelectivePreloadingStrategyService],
+  // imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    enableTracing: false,
+    useHash: true,
+    preloadingStrategy: SelectivePreloadingStrategyService
+})],
+providers: [SelectivePreloadingStrategyService],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

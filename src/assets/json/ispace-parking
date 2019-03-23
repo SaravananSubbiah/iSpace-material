@@ -1,0 +1,74 @@
+{
+    smartParking: {
+    "id": "santander:daoiz_velarde_1_5",
+    "type": "OnStreetParking",
+    "category": {
+        "value": ["blueZone", "shortTerm", "forDisabled"]
+    },
+    "permitActiveHours": {
+        "value": {
+            "blueZonePermit": "Mo, Tu, We, Th, Fr, Sa 09:00-20:00"
+        }
+    },
+    "requiredPermit": {
+        "value": ["blueZonePermit", "disabledPermit"]
+    },
+    "allowedVehicleType": {
+        "value": "car"
+    },
+    "chargeType": {
+        "value": ["temporaryFee"]
+    },
+    "refParkingGroup": {
+        "type": "Relationship",
+        "value": ["daoiz-velarde-1-5-main", "daoiz-velarde-1-5-disabled"]
+    },
+    "totalSpotNumber": {
+        "value": 6
+    },
+    "location": {
+        "type": "geo:json",
+        "value": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [-3.80356167695194, 43.46296641666926],
+                    [-3.803161973253841, 43.46301091092682],
+                    [-3.803147082548618, 43.462879859445884],
+                    [-3.803536474744068, 43.462838666196674],
+                    [-3.80356167695194, 43.46296641666926]
+                ]
+            ]
+        }
+    },
+    "areaServed": {
+        "value": "Zona Centro"
+    },
+    "maximumAllowedStay": {
+        "value": "PT2H"
+    },
+    "dateModified": {
+        "type": "DateTime",
+        "value": "2016-06-02T09:25:55.00Z"
+    },
+    "extraSpotNumber": {
+        "value": 2
+    },
+    "Spots": [
+      {"spotOpen":false,"spotId":"9999999","timestamp":1552849890},
+{"spotOpen":true,"spotId":"9999999","timestamp":1552849890},
+{"spotOpen":false,"spotId":"9999999","timestamp":1552849895},
+{"spotOpen":true,"spotId":"9999999","timestamp":1552849896},
+{"spotOpen":false,"spotId":"650404158","timestamp":1552849897},
+{"spotOpen":true,"spotId":"650404158","timestamp":1552849899},
+{"spotOpen":false,"spotId":"650404158","timestamp":1552849908},
+{"spotOpen":true,"spotId":"650404158","timestamp":1552849909},
+{"spotOpen":false,"spotId":"9999999","timestamp":1552849910},
+{"spotOpen":true,"spotId":"9999999","timestamp":1552849911},
+{"spotOpen":false,"spotId":"9999999","timestamp":1552849913},
+{"spotOpen":true,"spotId":"9999999","timestamp":1552849914},
+{"spotOpen":false,"spotId":"650404158","timestamp":1552849915},
+{"spotOpen":true,"spotId":"650404158","timestamp":1552849917}]
+    }
+}
+}

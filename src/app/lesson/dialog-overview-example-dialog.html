@@ -1,0 +1,12 @@
+<div mat-dialog-title fxLayout="row" fxLayoutAlign="end center">
+    <button mat-icon-button (click)="onNoClick()">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+<div mat-dialog-content>
+    <ispace-video [url]="lesson"></ispace-video>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button cdkFocusInitial>Ok</button>
+</div>

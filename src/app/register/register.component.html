@@ -1,0 +1,69 @@
+<mat-card fxLayout="column" fxLayoutAlign="center center">
+    <mat-card-header>
+        <mat-card-title>Student Registration Form</mat-card-title>
+    </mat-card-header>
+        <mat-card-content>
+        <!-- put the form here -->
+        <div class="example-container">
+            <mat-divider></mat-divider>
+            <form class="example-container" [formGroup]="form">
+              <div class="field">
+                    <label>Student from: </label>
+                      <mat-checkbox formControlName="uwf">UWF</mat-checkbox>
+                      <mat-checkbox formControlName="other">Outside</mat-checkbox>
+              </div>
+              <div class="field" fxLayout="row" fxLayoutAlign="space-between center">
+                <mat-radio-group formControlName="gendre">
+                  <mat-label>Gendre:</mat-label>
+                  <mat-radio-button value="male">Male</mat-radio-button>
+                  <mat-radio-button value="female">Female</mat-radio-button>
+                </mat-radio-group>
+                <mat-form-field>
+                    <mat-select required formControlName="school">
+                      <mat-option>-- NA --</mat-option>
+                      <mat-option value="3">1-Franklin Park School</mat-option>
+                      <mat-option value="4">2-Franklin Park School</mat-option>
+                      <mat-option value="5">3-Franklin Park School</mat-option>
+                      <mat-option value="6">4-Franklin Park School</mat-option>
+                    </mat-select>
+                    <mat-label>Select School</mat-label>
+                  </mat-form-field>
+                <mat-form-field>
+                    <mat-select required formControlName="grade">
+                      <mat-option>-- NA --</mat-option>
+                      <mat-option value="3">3rd Grade</mat-option>
+                      <mat-option value="4">4th Grade</mat-option>
+                      <mat-option value="5">5th Grade</mat-option>
+                      <mat-option value="6">6th Grade</mat-option>
+                    </mat-select>
+                    <mat-label>Select Grade</mat-label>
+                  </mat-form-field>
+              </div>
+
+            <mat-form-field [floatLabel]="form.value.studentname">
+              <mat-label>Student Name</mat-label>
+              <input matInput placeholder="Enter your name*" formControlName="studentname">
+            </mat-form-field>
+
+            <mat-form-field [floatLabel]="form.value.course">
+                <mat-label>Course Name</mat-label>
+                <input matInput placeholder="Enter your course" formControlName="coursename">
+              </mat-form-field>
+
+            <mat-form-field>
+              <mat-select required formControlName="interested">
+                <mat-option>-- NA --</mat-option>
+                <mat-option value="yes">Yes</mat-option>
+                <mat-option value="no">No</mat-option>
+              </mat-select>
+              <mat-label>I am interested in <b>IOT Programming & Coding</b></mat-label>
+            </mat-form-field>
+            </form>
+          </div>
+          <mat-divider></mat-divider>
+        </mat-card-content>
+        <mat-card-actions>
+        <!-- put buttons here -->
+        <button mat-raised-button color="primary" (click)="submitRegistrationClick(form.value)">Register</button>
+        </mat-card-actions>
+</mat-card>

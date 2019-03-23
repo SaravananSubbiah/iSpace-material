@@ -1,0 +1,13 @@
+<section fxLayout="row" fxLayoutAlign="center center">
+  <div
+    fxLayout="row wrap"
+    fxLayoutAlign="center center"
+    fxLayoutGap="32px grid"
+    style="width: 70vw;"
+  >
+    <ispace-lesson
+      [lesson]="lesson"
+      *ngFor="let lesson of lessonsArray"
+    ></ispace-lesson>
+  </div>
+</section>

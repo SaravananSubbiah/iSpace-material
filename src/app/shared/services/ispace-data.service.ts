@@ -3,7 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { School, Bullet, MessMenu } from './../interfaces/school';
+import { School, Bullet, Lesson } from './../interfaces/school';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +12,14 @@ export class IspaceDataService {
 
   constructor(private _httpClient: HttpClient) { }
 
-  getApp(): string { 
-    return "Hello world"; 
-  } 
+  getApp(): string {
+    return "Hello world";
+  }
+
+  getLessons(): Observable<any>{
+    return this._httpClient.get<any>('./assets/json/ispace-lessons.json')
+    .pipe(map(response => response));
+  }
 
 getSchools(): Observable<School[]>{
   return this._httpClient.get<School[]>('https://jsonplaceholder.typicode.com/posts')
@@ -23,18 +28,18 @@ getSchools(): Observable<School[]>{
 
 getBullets(): Observable<Bullet[]>{
   return this._httpClient.get<Bullet[]>('https://jsonplaceholder.typicode.com/posts')
-      .pipe(map(response => 
+      .pipe(map(response =>
         [
           {
           bulletHead: 'Parking',
           bulletColor: 'accent',
           bulletPoints: [
                           '24 hours Security',
-                          '24 hours Reception', 
+                          '24 hours Reception',
                           '24 hours Wireless Internet',
                           'Elevator',
                           'Mobile alert',
-                          'Wallet Parking' 
+                          'Wallet Parking'
                         ]
         },
         {
@@ -42,11 +47,11 @@ getBullets(): Observable<Bullet[]>{
           bulletColor: 'warn',
           bulletPoints: [
                           '24 hours Security',
-                          '24 hours Reception', 
+                          '24 hours Reception',
                           '24 hours Wireless Internet',
                           'Elevator',
                           'Mobile alert',
-                          'Wallet Parking' 
+                          'Wallet Parking'
                         ]
         },
         {
@@ -54,19 +59,19 @@ getBullets(): Observable<Bullet[]>{
           bulletColor: 'primary',
           bulletPoints: [
                           '24 hours Security',
-                          '24 hours Reception', 
+                          '24 hours Reception',
                           '24 hours Wireless Internet',
                           'Elevator',
                           'Mobile alert',
-                          'Wallet Parking' 
+                          'Wallet Parking'
                         ]
         }
-      ]                            
+      ]
         ));
 }
 
-getMessMenu(): Observable<MessMenu[]>{
-  return this._httpClient.get<MessMenu[]>('https://jsonplaceholder.typicode.com/posts')
+getLessons1(): Observable<Lesson[]>{
+  return this._httpClient.get<Lesson[]>('https://jsonplaceholder.typicode.com/posts')
                           .pipe(map(response => response));
 }
 

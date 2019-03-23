@@ -1,0 +1,35 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+  width: 25vW;
+}
+
+.example-container > * {
+  width: 100%;
+}
+
+.example-container form {
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.example-container form > * {
+  margin: 15px 0;
+}
+
+.mat-card-content {
+  padding: 0px 25px;
+}
+.example-container .mat-radio-button {
+  margin: 0 12px;
+}
+
+.example-container .mat-checkbox {
+  margin: 0 12px;
+}
+
+.example-container .mat-card-actions {
+  padding: 0px;
+}
+
+

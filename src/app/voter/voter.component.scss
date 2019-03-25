@@ -3,9 +3,19 @@ button {
 }
 .example-card {
     max-width: 400px;
+    width: 250px;
   }
-  
+
   .example-header-image {
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
     background-size: cover;
+  }
+
+  .car {
+    width: 100px;
+    height: 100px;
+  }
+  .material-icons {
+    font-size: 100px;
+    color: peru;
   }

@@ -12,11 +12,11 @@
       {{ lesson.title | slice: 0:20 }}
     </p>
     <p>
-      {{ lesson.title | slice: 0:20 }}
+      {{ lesson.views}}views. Duration:{{lesson.duration | slice: 0:5}} Hrs
     </p>
   </mat-card-content>
   <mat-card-actions>
-      <button mat-raised-button (click)="openDialog()">Pick one</button>
-    <button mat-button>SHARE</button>
+      <button mat-button color="primary" (click)="openDialog(lesson)">Watch video</button>
+    <button mat-button>Share</button>
   </mat-card-actions>
 </mat-card>

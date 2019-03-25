@@ -5,6 +5,12 @@ export interface School {
     body: string;
 }
 
+export interface ParkingSpot {
+  spotOpen: boolean,
+  spotId: string,
+  timestamp: string
+}
+
 export interface Lesson {
       lessonId: string,
       title: string,
@@ -18,7 +24,7 @@ export interface Lesson {
       featureTitle: string,
       mediaDetails: { },
       url: string,
-      weight: string,
+      views: string,
       duration: string,
   //   menu: { breakfast: string, lunch: string, dinner: string }
 }

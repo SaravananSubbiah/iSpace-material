@@ -8,6 +8,7 @@ import { LessonsListComponent } from './lessons-list/lessons-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RegisterComponent } from './register/register.component';
 import { Register2Component } from './register2/register2.component';
+
 import { LoginComponent } from './login/login.component';
 
 import { MindMapComponent } from './mind-map/mind-map.component';
@@ -31,7 +32,7 @@ const routes: Routes = [
     component: SmartParkingComponent
   },
   {
-    path: 'lessons-list',
+    path: 'lessons',
     component: LessonsListComponent
   },
   {

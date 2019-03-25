@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatSnackBar} from '@angular/material';
 
 /**
  * @title Stepper with editable steps
@@ -15,7 +16,9 @@ export class Register2Component implements OnInit {
   secondFormGroup: FormGroup;
   isEditable = false;
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(
+    private _formBuilder: FormBuilder,
+    private snackBar: MatSnackBar) {}
 
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
@@ -23,6 +26,22 @@ export class Register2Component implements OnInit {
     });
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
+    });
+  }
+  submitRegistrationClick() {
+    // const submitted = {
+    //   uwf: this.form.value.uwf,
+    //   other: this.form.value.other,
+    //   gendre : this.form.value.gendre,
+    //   grade : this.form.value.grade,
+    //   studentname: this.form.value.studentname,
+    //   school: this.form.value.school
+    // };
+    this.openSnackBar('Successfully Submitted', 'submitted');
+  }
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
     });
   }
 }

@@ -8,7 +8,7 @@ import { Bullet } from './../shared/interfaces/school';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-  @Input() 
+  @Input()
   cardInput: string;
   bullet: Bullet;
   bulletHead: string;
@@ -18,7 +18,7 @@ export class CardComponent implements OnInit {
   constructor(private _appService: IspaceDataService) { }
 
   ngOnInit() {
-    this._appService.getBullets().subscribe(data=>      
+    this._appService.getBullets().subscribe(data=>
       {
         switch (this.cardInput) {
           case 'features':
@@ -31,15 +31,16 @@ export class CardComponent implements OnInit {
             this.bullet = data[2];
             break;
         }
-        console.log(this.cardInput);    
+        console.log(this.cardInput);
         this.bulletHead = this.bullet.bulletHead;
         // this.bulletImage = this.bullet.bulletImage;
         console.log(this.bullet);
         this.bulletPoints = this.bullet.bulletPoints;
         this.bulletColor = this.bullet.bulletColor;
-        
-        
       });
+  }
+  openDialog() {
+    console.log('openDialog');
   }
 
 }

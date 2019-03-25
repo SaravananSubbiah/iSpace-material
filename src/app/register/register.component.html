@@ -1,4 +1,4 @@
-<mat-card fxLayout="column" fxLayoutAlign="center center">
+<mat-card fxLayout="column" fxLayoutAlign="center center" class="matcard">
     <mat-card-header>
         <mat-card-title>Student Registration Form</mat-card-title>
     </mat-card-header>
@@ -44,11 +44,15 @@
               <mat-label>Student Name</mat-label>
               <input matInput placeholder="Enter your name*" formControlName="studentname">
             </mat-form-field>
-
+            <div class="field" fxLayout="row" fxLayoutAlign="space-between center">
             <mat-form-field [floatLabel]="form.value.course">
                 <mat-label>Course Name</mat-label>
                 <input matInput placeholder="Enter your course" formControlName="coursename">
               </mat-form-field>
+              <mat-form-field>
+                  <input matInput type="number" min="1" placeholder="Age">
+                </mat-form-field>
+              </div>
 
             <mat-form-field>
               <mat-select required formControlName="interested">

@@ -1,20 +1,26 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
+import { ParkingSpot } from '../shared/interfaces/school';
 
 @Component({
   selector: 'ispace-voter',
   templateUrl: './voter.component.html',
   styleUrls: ['./voter.component.scss']
 })
-export class VoterComponent {
+export class VoterComponent implements OnInit {
 
-  @Input()  name: string;
+  @Input() spot: ParkingSpot;
   @Output() voted = new EventEmitter<boolean>();
   @Input() total: number;
   @Input() agreed: number;
   upVote = false;
   downVote = false;
 
+  constructor() {
+  }
 
+  ngOnInit() {
+    console.log('Spot : ', this.spot.spotOpen);
+  }
   vote(agreed: boolean) {
 
     this.upVote = (this.agreed >= this.total) ? true : false;

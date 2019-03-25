@@ -1,46 +1,47 @@
-<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="32px">
-  <h2>Parking Zone: A ({{ total }})</h2>
-  <h1 >
-  <button
-    mat-raised-button
-    color="primary"
-    [matBadge]="agreed"
-    matBadgePosition="before"
-    matBadgeColor="accent"
-  >
-    Occupied
-  </button>
-  </h1>
-  <h1>
-  <button
-    mat-raised-button
-    color="primary"
-    [matBadge]="total - agreed"
-    matBadgePosition="before"
-    matBadgeColor="accent"
-  >
-    Available
-  </button>
-  </h1>
-  <button mat-fab routerLink="/lessons-list">lessons-list</button>
-</div>
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="32px">
+  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="32px">
+    <h2>Parking Zone: A ({{ total }})</h2>
+    <h1>
+      <button
+        mat-raised-button
+        color="primary"
+        [matBadge]="agreed"
+        matBadgePosition="before"
+        matBadgeColor="accent"
+      >
+        Occupied
+      </button>
+    </h1>
+    <h1>
+      <button
+        mat-raised-button
+        color="primary"
+        [matBadge]="total - agreed"
+        matBadgePosition="before"
+        matBadgeColor="accent"
+      >
+        Available
+      </button>
+    </h1>
+    <mat-slide-toggle>Slide me!</mat-slide-toggle>
+    <div>
+      <button mat-raised-button (click)="openDialog()">Parking History</button>
+    </div>
+  </div>
 
-<div
-  fxLayout="row wrap"
-  fxLayoutAlign="center center"
-  fxLayoutGap="32px grid"
-  style="width: 70vw;"
->
-  <ispace-voter
-    *ngFor="let voter of voters"
-    [total]="total"
-    [agreed]="agreed"
-    [name]="voter"
-    (voted)="onVoted($event)"
+  <div
+    fxLayout="row wrap"
+    fxLayoutAlign="center center"
+    fxLayoutGap="32px grid"
+    style="width: 70vw;"
   >
-  </ispace-voter>
-</div>
-<div>
-    <button mat-raised-button (click)="openDialog()">Pick one</button>
-
+    <ispace-voter
+      *ngFor="let spot of parkingSpots"
+      [total]="total"
+      [agreed]="agreed"
+      [spot]="spot"
+      (voted)="onVoted($event)"
+    >
+    </ispace-voter>
+  </div>
 </div>

@@ -23,14 +23,24 @@ export class SmartParkingComponent implements OnInit {
   agreed = 0;
   disagreed = 0;
   voters = ['Park-1', 'Park-2', 'Park-3', 'Park-4', 'Park-5', 'Park-6', 'Park-7', 'Park-8', 'Park-9', 'Park-10', 'Park-11', 'Park-12'];
-
+  public parking: any;
+  public parkingSpots: [];
 
   constructor(
-    private _appService: IspaceDataService,
+    private _ispaceDataService: IspaceDataService,
     public dialog: MatDialog,
-    private snackBar: MatSnackBar) { }
+    private snackBar: MatSnackBar) {
+      this._ispaceDataService
+    .getParking()
+    .subscribe(data => {
+      this.parking = data;
+      console.log('parking', this.parking.smartParking.length);
+      this.parkingSpots = this.parking.smartParking[0].Spots;
+      console.log('parkingSpots', this.parkingSpots);
+    });
+    }
   onVoted(agreed: boolean) {
-    this.openSnackBar(agreed ? 'Successfully added' : 'Successfully removed', 'Parking')
+    this.openSnackBar(agreed ? 'Successfully added' : 'Successfully removed', 'Parking');
     if (agreed) {
       this.agreed++;
       this.disagreed--;

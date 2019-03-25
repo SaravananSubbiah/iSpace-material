@@ -1,14 +1,16 @@
 <section fxLayout="row" fxFlex="1 1 100%"  fxLayoutGap="3" fxLayoutAlign="center center">
-    <mat-card class="example-card">
+    <mat-card class="example-card" [ngStyle]="{'background-color':spot.spotOpen ? 'green' : 'red' }">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>{{name}}</mat-card-title>
-          <mat-card-subtitle>map</mat-card-subtitle>
+          <mat-card-title>SpotId: {{spot.spotId}}</mat-card-title>
+          <mat-card-subtitle>location map</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
-          <p>
-           Location : Zone1, 1st parking
-          </p>
+          <div fxLayout="column" fxLayoutGap="3" fxLayoutAlign="center center">
+           <div>Location : Zone1, 1st parking,</div>
+           <div class="car"><mat-icon >local_car_wash</mat-icon></div>
+           <div>TimeStamp : {{spot.timestamp}}</div>
+          </div>
         </mat-card-content>
         <mat-card-actions fxLayout="row" fxLayoutAlign="space-around">
             <button (click)="vote(true)" mat-fab [disabled]="upVote">+</button>

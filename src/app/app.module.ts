@@ -26,6 +26,8 @@ import { MoreLinksComponent } from './more-links/more-links.component';
 import { RegisterComponent } from './register/register.component';
 import { Register2Component } from './register2/register2.component';
 import { LoginComponent } from './login/login.component';
+import { VideoDialogComponent } from './video-dialog/video-dialog.component';
+import { AboutComponent } from './about/about.component';
 
 
 import { HttpClientModule } from '@angular/common/http';
@@ -48,6 +50,8 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterComponent,
     Register2Component,
     LoginComponent,
+    AboutComponent,
+    VideoDialogComponent
   ],
   exports: [
     CommonModule,

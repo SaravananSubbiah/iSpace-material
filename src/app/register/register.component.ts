@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators, FormControl, ReactiveFormsModule} from '@angular/forms';
-
+import {MatSnackBar} from '@angular/material';
 @Component({
   selector: 'ispace-register',
   templateUrl: './register.component.html',
@@ -11,7 +11,8 @@ export class RegisterComponent implements OnInit {
   public form: FormGroup;
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private snackBar: MatSnackBar
     ) {
     this.form = fb.group({
       'gendre': ['', Validators.required],
@@ -36,6 +37,11 @@ export class RegisterComponent implements OnInit {
       studentname: this.form.value.studentname,
       school: this.form.value.school
     };
-    console.log('submitting : ', submitted);
+    this.openSnackBar('Successfully Submitted', 'submitted');
+  }
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
+    });
   }
 }

@@ -1,4 +1,4 @@
-<section fxLayout="row" fxLayoutAlign="center center">
+<section fxLayout="column" fxLayoutAlign="center center" class="lessons">
   <div
     fxLayout="row wrap"
     fxLayoutAlign="center center"
@@ -10,4 +10,6 @@
       *ngFor="let lesson of lessonsArray"
     ></ispace-lesson>
   </div>
+  <mat-divider></mat-divider>
+    <button mat-raised-button>Show more</button>
 </section>

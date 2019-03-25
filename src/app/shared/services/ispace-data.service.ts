@@ -21,6 +21,11 @@ export class IspaceDataService {
     .pipe(map(response => response));
   }
 
+  getParking(): Observable<any>{
+    return this._httpClient.get<any>('./assets/json/ispace-parking.json')
+    .pipe(map(response => response));
+  }
+
 getSchools(): Observable<School[]>{
   return this._httpClient.get<School[]>('https://jsonplaceholder.typicode.com/posts')
                           .pipe(map(response => response));

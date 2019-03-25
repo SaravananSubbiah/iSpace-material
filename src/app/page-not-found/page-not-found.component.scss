@@ -4,10 +4,12 @@
     position: static;
     display: flex;
     align-items: center;
-    height: 100%;
+    margin: 80px;
+
 }
 
 .message::before
 {
     content: url('../../assets/images/404.jpg');
+    margin-right: 40px;
 }

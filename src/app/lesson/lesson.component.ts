@@ -12,20 +12,22 @@ export interface DialogData {
   templateUrl: './lesson.component.html',
   styleUrls: ['./lesson.component.scss']
 })
-export class LessonComponent {
+export class LessonComponent implements OnInit {
   @Input() lesson: Lesson;
   title: string;
   lessonId: string;
   url: string;
 
   constructor(public dialog: MatDialog) {
-    console.log('lession', this.lesson);
     this.title = 'test'; //this.lesson.title ? this.lesson.title : '';
     this.lessonId = 'test'; //this.lesson.lessonId ? this.lesson.lessonId : '';
     this.url = 'test'; //this.lesson.url ? this.lesson.url : '';
   }
 
-  openDialog(): void {
+  ngOnInit() {
+    console.log('lession', this.lesson);
+  }
+  openDialog(lesson: Lesson): void {
     const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
       height: '50hw',
       width: '60vw',
@@ -45,7 +47,7 @@ export class LessonComponent {
   templateUrl: './dialog-overview-example-dialog.html',
 })
 export class DialogOverviewExampleDialog {
-
+  @Input() lesson: Lesson;
   constructor(
     public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {}

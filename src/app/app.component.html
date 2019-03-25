@@ -1,7 +1,59 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div class="example-button-row" fxLayout="column" fxLayoutAlign="center center">
-  <router-outlet></router-outlet>
-</div>
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+    <mat-toolbar color="primary" class="example-toolbar" fxLayout="row" fxLayoutAlign="space-between center">
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
+          <button mat-icon-button (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
+          </button>
+
+          <button mat-button [matMenuTriggerFor]="menu">Go Home  <mat-icon>home</mat-icon></button>
+          <mat-menu #menu="matMenu">
+            <a href="https://discoveryspot.com/" mat-menu-item>Discovery Spot</a>
+            <a href="http://ispaceinc.net/" mat-menu-item>iSpace</a>
+            <button mat-menu-item>UWF</button>
+          </mat-menu>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="20px">
+          <button mat-raised-button color="primary" routerLink="/">About</button>
+          <button mat-raised-button color="accent" routerLink="/enquiry">Help</button>
+          <button mat-raised-button routerLink="/login">Login</button>
+          <button mat-raised-button routerLink="/register">Register</button>
+          <button mat-raised-button routerLink="/register2">Register2</button>
+      </div>
+    </mat-toolbar>
+
+    <mat-sidenav-container
+      class="example-sidenav-container"
+      [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
+    >
+      <mat-sidenav
+        #snav
+        [mode]="mobileQuery.matches ? 'over' : 'side'"
+        [fixedInViewport]="mobileQuery.matches"
+        fixedTopGap="56"
+      >
+        <mat-nav-list>
+          <a mat-list-item routerLink="/smartparking">smartparking</a>
+          <a mat-list-item routerLink="/lessons">lessons</a>
+          <a mat-list-item routerLink="/register">Registration Menu1</a>
+          <a mat-list-item routerLink="/register2">Registration Menu2</a>
+          <a mat-list-item routerLink="/smartparking">Menu5</a>
+          <a mat-list-item routerLink="/smartparking">Menu6</a>
+          <!-- <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{
+            nav
+          }}</a> -->
+        </mat-nav-list>
+      </mat-sidenav>
+
+      <mat-sidenav-content>
+          <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+
+  <!-- Copyright 2018 Google Inc. All Rights Reserved.
+      Use of this source code is governed by an MIT-style license that
+      can be found in the LICENSE file at http://angular.io/license -->
+
 
 <!--Scroll to top-->
 <!-- <button [ngClass]="{'show-scroll': showScroll}" (click)="scrollToTop()" class="scroll-to-top">

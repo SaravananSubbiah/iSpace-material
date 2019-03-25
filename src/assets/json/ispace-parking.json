@@ -1,5 +1,6 @@
 {
-    smartParking: {
+    "smartParking": [
+      {
     "id": "santander:daoiz_velarde_1_5",
     "type": "OnStreetParking",
     "category": {
@@ -55,7 +56,7 @@
         "value": 2
     },
     "Spots": [
-      {"spotOpen":false,"spotId":"9999999","timestamp":1552849890},
+{"spotOpen":true,"spotId":"9999999","timestamp":1552849890},
 {"spotOpen":true,"spotId":"9999999","timestamp":1552849890},
 {"spotOpen":false,"spotId":"9999999","timestamp":1552849895},
 {"spotOpen":true,"spotId":"9999999","timestamp":1552849896},
@@ -70,5 +71,5 @@
 {"spotOpen":false,"spotId":"650404158","timestamp":1552849915},
 {"spotOpen":true,"spotId":"650404158","timestamp":1552849917}]
     }
-}
+  ]
 }

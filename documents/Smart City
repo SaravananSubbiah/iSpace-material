@@ -1,0 +1,261 @@
+{
+  "formatVersion": 3,
+  "id": "root",
+  "ideas": {
+    "1": {
+      "title": "Smart City",
+      "id": 1,
+      "attr": {
+        "position": [
+          -41,
+          296,
+          1
+        ],
+        "style": {
+          "width": 237
+        },
+        "note": {
+          "index": 1,
+          "text": "What is a smart city? Typically a smart city is one where resources are used in a smart way to increase efficiency and improve daily life of the citizens living in that city. So, as an example think of :\na. using your cell phone to switch on and off lights in your house, \nb. or locking your bike if you forget to lock it in the parking lot, \nc. monitor and water your plants, and so on. \nAll these tasks ensure that resources are used efficiently when needed and not used when not necessary. In this semester you will build a smart city by installing \nsmart parking lots\nsmart farms\nsmart inventory systems\nsmart parks\nsmart Traffic lights\netc. Each one of these installations require skills from multiple disciplines such as math, science, programming and above all analytical and critical thinking. We hope that you will enjoy this activity, learn new technologies and skills and have fun completing the activities."
+        }
+      },
+      "ideas": {
+        "1": {
+          "title": "Smart Parking Lot",
+          "id": "3.bdac.7840545e9-7792.b62c5dd91",
+          "ideas": {},
+          "attr": {
+            "position": [
+              330,
+              -100,
+              28
+            ],
+            "style": {
+              "backgroundColor": "#FFCC99",
+              "text": {
+                "color": "#000000"
+              },
+              "width": 118.2
+            },
+            "note": {
+              "index": 3,
+              "text": "A smart parking lot is one that uses sensors and techniques to keep track of which slots have been occupied and which slots remain open. Such a system lets the driver know were he or she may find a spot to park without having to search for open slots. Use of cameras in parking lots can also capture information about cars parked and in case of criminal activities detect the owner of the car using the camera feed. \n\nAdditionally, since this information can be connected to the Internet, the owner will also be able to know which time slots tend to be busy and require more monitoring. \n\nUpon completing this project the student will be able to\nDescribe what a smart parking lot is\nIdentify the significant components required to design a smart parking lot\nAnalyze requirements to construct each component of the smart parking lot\nImplement the requirements and build the smart parking lot"
+            },
+            "attachment": {
+              "contentType": "application/vnd.google.drive.attachment",
+              "content": {
+                "name": "Smart Parking Lot",
+                "mimeType": "application/vnd.mindmup",
+                "url": "https://drive.google.com/a/uwf.edu/file/d/1_UH-gRfuUc-kThVaHq4HODYO7DoKrEwK/view?usp=drive_web",
+                "description": "",
+                "embedUrl": "https://drive.google.com/a/uwf.edu/file/d/1_UH-gRfuUc-kThVaHq4HODYO7DoKrEwK/preview?usp=drive_web"
+              }
+            },
+            "parentConnector": {
+              "color": "#800080"
+            }
+          }
+        },
+        "3": {
+          "title": "Smart Traffic Lights",
+          "id": "9.bdac.7840545e9-7792.b62c5dd91",
+          "attr": {
+            "position": [
+              388,
+              93,
+              33
+            ],
+            "style": {
+              "backgroundColor": "#FFCC00"
+            },
+            "note": {
+              "index": 4,
+              "text": "Smart Traffic Lights are able to monitor traffic flow through a junction using infrared sensors and proximity sensors. Depending on the traffic flow, the lights can adapt and change their state to allow smoother and more efficient flow of traffic, and reduce traffic blocks.\r\n\r\nUpon completing this project the student will be able to\r\nDescribe what a smart traffic light system is\r\nIdentify the significant components required to design a smart traffic light system\r\nAnalyze requirements to construct each component of a smart traffic light system\r\nImplement the requirements and build a smart traffic light system"
+            },
+            "parentConnector": {
+              "color": "#FF0000"
+            }
+          }
+        },
+        "4": {
+          "title": "Smart Parks",
+          "id": "13.bdac.7840545e9-7792.b62c5dd91",
+          "attr": {
+            "position": [
+              272,
+              169,
+              27
+            ],
+            "style": {
+              "backgroundColor": "#99CC00"
+            },
+            "note": {
+              "index": 5,
+              "text": "A smart park has several sensors as well. These sensors such as proximity sensors and motion activated sensors can track how many cars, trucks and visitors have come to the park. Such information collected on the cloud via the Internet can be invaluable to park owners who can again monitor the usage of their parks from anywhere at any time. This will also allow park owners and city officials to allocate their resources efficiently.\n\n\nUpon completing this project the student will be able to\nDescribe what a smart park is\nIdentify the significant components required to design a smart parks\nAnalyze requirements to construct each component of the smart parks\nImplement the requirements and build the smart parks"
+            },
+            "parentConnector": {
+              "color": "#008000"
+            }
+          }
+        },
+        "-1": {
+          "title": "Smart  Farm",
+          "id": "5.bdac.7840545e9-7792.b62c5dd91",
+          "attr": {
+            "position": [
+              398,
+              -105,
+              29
+            ],
+            "style": {
+              "backgroundColor": "#00FF00"
+            },
+            "note": {
+              "index": 6,
+              "text": "A smart farm uses several sensors to monitor several elements related to the health of a plant. These include light, moisture, nutrients, etc. The smart farm allows the owner of the farm to monitor all these elements related to his plants from anywhere at any time using the Internet. \n\n\nUpon completing this project the student will be able to\nDescribe what a smart smart farm is\nIdentify the significant components such as humidity sensors, light sensors etc. required to design a smart farm\nAnalyze requirements to construct each component of the smart farm\nImplement the requirements and build the smart farm"
+            },
+            "parentConnector": {
+              "color": "#008000"
+            }
+          }
+        },
+        "-3": {
+          "title": "Smart Inventory System",
+          "id": "12.bdac.7840545e9-7792.b62c5dd91",
+          "attr": {
+            "position": [
+              379,
+              70,
+              32
+            ],
+            "style": {
+              "backgroundColor": "#CCFFFF"
+            },
+            "note": {
+              "index": 7,
+              "text": "A smart inventory system manages the levels of"
+            },
+            "parentConnector": {
+              "color": "#FF00FF"
+            }
+          }
+        },
+        "-4": {
+          "title": "Smart Hospitals",
+          "id": "16.bdac.7840545e9-7792.b62c5dd91",
+          "attr": {
+            "style": {
+              "backgroundColor": "#FFCC99",
+              "fontMultiplier": 1.25
+            },
+            "note": {
+              "index": 8,
+              "text": "Smart hospitals use sensors, hardware and software to ensure that patients, and staff are monitored for their security. Sensors and hardware will be used to tag patients with id tags, monitor patient vitals, provide a controlled environment,  track usage of medication etc. Smart software will be used to offer intra communication among patients, physicians, and family members. and administration.  A smart hospital reduces duplication of information. Such an infra structure will allow the hospitals to function efficiently and effectively.\n\n\nUpon completing this project the student will be able to\nDescribe what a smart hospital is\nIdentify the significant components such as temperature sensors, light sensors, rfid tags,  etc. required to design a smart hospital\nAnalyze requirements to construct each component of the smart farm\nDescribe what you want the software to do\nImplement the requirements and build the smart smart hospital"
+            },
+            "parentConnector": {
+              "color": "#000080"
+            }
+          }
+        },
+        "0.5": {
+          "title": "Smart Power",
+          "id": "17.bdac.7840545e9-7792.b62c5dd91",
+          "attr": {
+            "position": [
+              18,
+              -236,
+              31
+            ],
+            "style": {
+              "backgroundColor": "#00FFFF"
+            },
+            "note": {
+              "index": 2,
+              "text": "A smart power system is able to get data from various power installations, such as Hospitals, Residential areas, Markets, etc., and monitor the power consumption at each installation. In case of an emergency caused by a power loss at any one installation, the system is able to reroute power from other installations, depending on priorities.\r\n\r\nUpon completing this project the student will be able to:\r\nDescribe what a smart power system is and its capabilities\r\nIdentify the significant components required to design a smart power system\r\nAnalyze requirements to construct each component of the smart power system\r\nImplement the requirements and build the smart power system"
+            },
+            "parentConnector": {
+              "color": "#0000FF"
+            }
+          }
+        }
+      }
+    }
+  },
+  "attr": {
+    "theme": "default"
+  },
+  "title": "",
+  "links": [
+    {
+      "ideaIdFrom": "17.bdac.7840545e9-7792.b62c5dd91",
+      "ideaIdTo": "13.bdac.7840545e9-7792.b62c5dd91",
+      "attr": {
+        "style": {
+          "color": "#800000",
+          "lineStyle": "dashed",
+          "arrow": "to",
+          "width": 1
+        }
+      }
+    },
+    {
+      "ideaIdFrom": "17.bdac.7840545e9-7792.b62c5dd91",
+      "ideaIdTo": "9.bdac.7840545e9-7792.b62c5dd91",
+      "attr": {
+        "style": {
+          "color": "#800000",
+          "lineStyle": "dashed",
+          "arrow": "to",
+          "width": 1
+        }
+      }
+    },
+    {
+      "ideaIdFrom": "17.bdac.7840545e9-7792.b62c5dd91",
+      "ideaIdTo": "3.bdac.7840545e9-7792.b62c5dd91",
+      "attr": {
+        "style": {
+          "color": "#800000",
+          "lineStyle": "dashed",
+          "arrow": "to"
+        }
+      }
+    },
+    {
+      "ideaIdFrom": "17.bdac.7840545e9-7792.b62c5dd91",
+      "ideaIdTo": "16.bdac.7840545e9-7792.b62c5dd91",
+      "attr": {
+        "style": {
+          "color": "#800000",
+          "lineStyle": "dashed",
+          "arrow": "to",
+          "width": 1
+        }
+      }
+    },
+    {
+      "ideaIdFrom": "17.bdac.7840545e9-7792.b62c5dd91",
+      "ideaIdTo": "12.bdac.7840545e9-7792.b62c5dd91",
+      "attr": {
+        "style": {
+          "color": "#800000",
+          "lineStyle": "dashed",
+          "arrow": "to",
+          "width": 1
+        }
+      }
+    },
+    {
+      "ideaIdFrom": "17.bdac.7840545e9-7792.b62c5dd91",
+      "ideaIdTo": "5.bdac.7840545e9-7792.b62c5dd91",
+      "attr": {
+        "style": {
+          "color": "#800000",
+          "lineStyle": "dashed",
+          "arrow": "to",
+          "width": 1
+        }
+      }
+    }
+  ]
+}

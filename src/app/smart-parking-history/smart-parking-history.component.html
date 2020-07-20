@@ -1,0 +1,22 @@
+<table cdk-table [dataSource]="dataSource">
+  <!-- Position Column -->
+  <ng-container cdkColumnDef="spotOpen">
+    <th cdk-header-cell *cdkHeaderCellDef> spotOpen </th>
+    <td cdk-cell *cdkCellDef="let element"> {{element.spotOpen}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container cdkColumnDef="spotId">
+    <th cdk-header-cell *cdkHeaderCellDef> spotId </th>
+    <td cdk-cell *cdkCellDef="let element"> {{element.spotId}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container cdkColumnDef="timestamp">
+    <th cdk-header-cell *cdkHeaderCellDef> timestamp </th>
+    <td cdk-cell *cdkCellDef="let element"> {{element.timestamp}} </td>
+  </ng-container>
+
+  <tr cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
+  <tr cdk-row *cdkRowDef="let row; columns: displayedColumns;"></tr>
+</table>

@@ -1,5 +1,11 @@
 import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, Component, OnDestroy, HostListener} from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { Register2Component } from './register2/register2.component';
+import { Register3Component } from './register3/register3.component';
+
 /** @title Responsive sidenav */
 
 @Component({
@@ -26,7 +32,9 @@ export class AppComponent  implements OnDestroy {
 
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(changeDetectorRef: ChangeDetectorRef,
+    media: MediaMatcher,
+    public dialog: MatDialog) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -50,7 +58,55 @@ export class AppComponent  implements OnDestroy {
     }
   }
 
+  openLoginDialog(): void {
+    const dialogRef = this.dialog.open(LoginComponent, {
+      height: '50hw',
+      width: '60vw',
+      data: {name: 'this.lessonId', title: this.title, url: 'this.url'}
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.title = result;
+    });
+  }
+
+  openRegisterDialog(): void {
+    const dialogRef = this.dialog.open(RegisterComponent, {
+      height: '50hw',
+      width: '60vw',
+      data: {name: 'this.lessonId', title: this.title, url: 'this.url'}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.title = result;
+    });
+  }
+  openRegister2Dialog(): void {
+    const dialogRef = this.dialog.open(Register2Component, {
+      height: '50hw',
+      width: '60vw',
+      data: {name: 'this.lessonId', title: this.title, url: 'this.url'}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.title = result;
+    });
+  }
+  openRegister3Dialog(): void {
+    const dialogRef = this.dialog.open(Register3Component, {
+      height: '50hw',
+      width: '60vw',
+      data: {name: 'this.lessonId', title: this.title, url: 'this.url'}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.title = result;
+    });
+  }
   scrollToTop()
   {
     (function smoothscroll()

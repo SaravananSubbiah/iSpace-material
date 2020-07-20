@@ -1,6 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Inject} from '@angular/core';
 import {FormBuilder, FormGroup, Validators, FormControl, ReactiveFormsModule} from '@angular/forms';
 import {MatSnackBar} from '@angular/material';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+
+export interface DialogData {
+  name: string;
+}
 @Component({
   selector: 'ispace-register',
   templateUrl: './register.component.html',
@@ -12,7 +17,9 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    public dialogRef: MatDialogRef<RegisterComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData
     ) {
     this.form = fb.group({
       'gendre': ['', Validators.required],
@@ -44,4 +51,19 @@ export class RegisterComponent implements OnInit {
       duration: 2000,
     });
   }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+    login() {
+    if (true) {
+      //this.router.navigate(['success']);
+    } else {
+      // this.dialog.open(MessageComponent,{ data: {
+      // message:  'Error!!!'
+      // }});
+    }
+  }
 }
+
+

@@ -13,11 +13,10 @@
           </mat-menu>
         </div>
         <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="20px">
-          <button mat-raised-button color="primary" routerLink="/">About</button>
+          <button mat-raised-button color="primary" routerLink="/about">About</button>
           <button mat-raised-button color="accent" routerLink="/enquiry">Help</button>
-          <button mat-raised-button routerLink="/login">Login</button>
-          <button mat-raised-button routerLink="/register">Register</button>
-          <button mat-raised-button routerLink="/register2">Register2</button>
+          <button mat-raised-button (click)="openLoginDialog()">Login</button>
+          <button mat-raised-button (click)="openRegisterDialog()">Register</button>
       </div>
     </mat-toolbar>
 
@@ -32,10 +31,13 @@
         fixedTopGap="56"
       >
         <mat-nav-list>
+          <a mat-list-item routerLink="/dashboard">dashboard</a>
+          <a mat-list-item routerLink="/mindmap">mindmap</a>
           <a mat-list-item routerLink="/smartparking">smartparking</a>
           <a mat-list-item routerLink="/lessons">lessons</a>
           <a mat-list-item routerLink="/register">Registration Menu1</a>
-          <a mat-list-item routerLink="/register2">Registration Menu2</a>
+          <a mat-list-item (click)="openRegister2Dialog()">Register2</a>
+          <a mat-list-item (click)="openRegister3Dialog()">Register3</a>
           <a mat-list-item routerLink="/smartparking">Menu5</a>
           <a mat-list-item routerLink="/smartparking">Menu6</a>
           <!-- <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{

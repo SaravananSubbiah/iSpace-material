@@ -11,10 +11,10 @@ import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 
 
 import { AppRoutingModule } from './app-routing.module';
+import { MindMapModule } from './mind-map/mind-map.module';
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent, BottomSheetOverviewExampleSheet } from './dashboard/dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { MindMapComponent } from './mind-map/mind-map.component';
 import { VideoComponent } from './video/video.component';
 import { SmartParkingComponent } from './smart-parking/smart-parking.component';
 import { CardComponent } from './card/card.component';
@@ -30,14 +30,19 @@ import { VideoDialogComponent } from './video-dialog/video-dialog.component';
 import { AboutComponent } from './about/about.component';
 
 
+
 import { HttpClientModule } from '@angular/common/http';
+import { SvgComponent } from './svg/svg.component';
+import { Register3Component } from './register3/register3.component';
+import { SmartParkingHistoryComponent } from './smart-parking-history/smart-parking-history.component';
+import { FilterComponent } from './filter/filter.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     PageNotFoundComponent,
-    MindMapComponent,
     VideoComponent,
     SmartParkingComponent,
     CardComponent,
@@ -51,7 +56,13 @@ import { HttpClientModule } from '@angular/common/http';
     Register2Component,
     LoginComponent,
     AboutComponent,
-    VideoDialogComponent
+    VideoDialogComponent,
+    SvgComponent,
+    BottomSheetOverviewExampleSheet,
+    Register3Component,
+    SmartParkingHistoryComponent,
+    FilterComponent,
+    HomeComponent
   ],
   exports: [
     CommonModule,
@@ -59,8 +70,14 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule
   ],
   entryComponents: [
+    SmartParkingHistoryComponent,
+    LoginComponent,
     DialogOverviewExampleDialog,
-    EnquiryDialogComponent
+    RegisterComponent,
+    Register2Component,
+    Register3Component,
+    EnquiryDialogComponent,
+    BottomSheetOverviewExampleSheet
 ],
   imports: [
     BrowserModule,
@@ -69,10 +86,11 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     MaterialModule,
     HttpClientModule,
+    MindMapModule,
     EmbedVideo.forRoot(),
     ReactiveFormsModule
   ],
-  providers: [ FormBuilder ],
+  providers: [ FormBuilder],
   bootstrap: [AppComponent
   ]
 })

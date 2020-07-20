@@ -1,0 +1,9 @@
+<div><mat-button-toggle-group #toggleSwitchGroup="matButtonToggleGroup"
+   [value]="selectedVal"  multiple (change)="onValChange(toggleSwitchGroup.value)">
+  <mat-button-toggle value="grd1">Grade 1</mat-button-toggle>
+  <mat-button-toggle value="grd2">Grade 2</mat-button-toggle>
+  <mat-button-toggle value="grd3">Grade 3</mat-button-toggle>
+  <mat-button-toggle value="grd4">Grade 4</mat-button-toggle>
+</mat-button-toggle-group>
+{{toggleSwitchGroup.value}}
+</div>

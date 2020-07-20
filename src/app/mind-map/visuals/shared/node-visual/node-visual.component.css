@@ -1,0 +1,104 @@
+.node {
+    cursor: pointer;
+    transition: stroke-width 0.1s ease-out,
+        fill 0.1s ease-out,
+        stroke 0.1s ease-out;
+
+    stroke: white;
+    stroke-width: 0.55;
+}
+.node-name {
+  word-wrap: break-word;
+  flex-wrap: wrap;
+}
+.node:hover {
+  fill: royalblue;
+  stroke: red;
+  stroke-width: 3;
+}
+
+.node:focus {
+  fill: royalblue;
+  stroke: red;
+  stroke-width: 3;
+}
+
+img {
+  max-height: 100vh;
+  max-width: 300px;
+  }
+
+
+.node-name {
+  font-family: 'Lato';
+  text-anchor: middle;
+  alignment-baseline: central;
+  font-weight: 300;
+  fill: white;
+}
+
+
+body {
+  background: #F17563;
+  font-family: Open Sans;
+  font-size: 50px;
+  color: #222;
+}
+
+svg {
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  display: block;
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.player {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: all 1200ms;
+  transition: all 1200ms;
+  z-index: 20;
+}
+
+  .player div {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background: #FFF;
+      text-align: center;
+      line-height: 200px;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 50%;
+  }
+  .player img {
+    border-radius: 50%;
+  }
+
+  .player .back {
+      background: #222;
+      color: #FFF;
+      -webkit-transform: rotateY(180deg);
+      transform: rotateY(180deg);
+  }
+
+input {
+  display: none;
+}
+
+.player.voted {
+  visibility: hidden;
+}

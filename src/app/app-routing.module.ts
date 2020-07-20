@@ -10,30 +10,43 @@ import { RegisterComponent } from './register/register.component';
 import { Register2Component } from './register2/register2.component';
 
 import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
 
-import { MindMapComponent } from './mind-map/mind-map.component';
 import { SelectivePreloadingStrategyService } from './shared/services/selective-preloading-strategy.service';
+import { MindMapComponent } from './mind-map/mind-map.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  {
-    path: 'login',
-    component: LoginComponent
-  },
+  // {
+  //   path: 'login',
+  //   component: LoginComponent
+  // },
   {
     path: 'mindmap',
-    component: MindMapComponent
+    component: MindMapComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: '',
-    component: DashboardComponent
-  },
+    component: HomeComponent,
+    canActivateChild: [AuthGuard],
+        children: [
+          { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+
+        ] },
   {
     path: 'smartparking',
-    component: SmartParkingComponent
+    component: SmartParkingComponent,
+    canActivate: [AuthGuard],
   },
   {
+    path: 'about',
+    component: AboutComponent  },
+  {
     path: 'lessons',
-    component: LessonsListComponent
+    component: LessonsListComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'register',
@@ -43,57 +56,10 @@ const routes: Routes = [
     path: 'register2',
     component: Register2Component
   },
-
-//   { path: 'signin', component: SigninComponent },
-//   { path: 'register', component: RegisterUserComponent },
-//   { path: 'authenticated', component: AuthenticatedUserComponent,
-//    canActivate: [AuthGuard]
-// },
-//   //   children: [
-//   //     { path: '', canActivateChild: [AuthGuard],
-//   //       children: [
-//   //         { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-
-//   //       ] }
-//   //     ] },
-//   {
-//     path: 'dashboard',
-//     component: DashboardComponent
-//   },
-//   {
-//     path: 'school-list',
-//     component: SchoolListComponent
-//   },
-//   {
-//     path: 'school-maintenance',
-//     component: SchoolMaintenanceComponent
-//   },
-//   {
-//     path: 'mess-facilities',
-//     component: MenuComponent
-//   },
-//   {
-//     path: 'about-us',
-//     component: AboutUsComponent
-//   },
-//   {
-//     path: 'enquiry',
-//     component: EnquiryComponent
-//   },
-//   //{path: 'post-detail/:userId', component : PostDetailComponent }
-//   {
-//     path: 'school-detail/:schoolId',
-//     component: SchoolDetailComponent,
-//     canActivate: [AuthGuard],
-//   },
-//   {
-//     path: 'school-detail',
-//     component: SchoolDetailComponent,
-//     canActivate: [AuthGuard],
-//   },
   {
     path: 'dashboard',
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: '**',

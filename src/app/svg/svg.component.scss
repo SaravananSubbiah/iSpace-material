@@ -1,0 +1,120 @@
+svg {
+  display: block;
+  width: 100%;
+  background: red;
+}
+
+@keyframes slideDown{
+  0% {
+    transform: translate(0px,0px) ;
+  }
+  100% {
+    transform: translate(0px,75px) ;
+  }
+}
+
+
+@keyframes slideUp{
+  0% {
+    transform: translate(0px,75px) ;
+  }
+  100% {
+    transform:  translate(0px,0px) ;
+  }
+}
+
+
+/*
+stuff here
+*/
+
+
+body {
+    font-family: cabin, Arial, sans-serif;
+    background: #f9f9f9;
+    font-weight: 300;
+    font-size: 15px;
+    color: #333;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding: 0;
+  margin: 0;
+}
+
+
+.st0{fill:#BBB8BF;}
+  .st1{fill:#663399;}
+  .st2{fill:#FFFFFF;}
+  .st3{fill:#898989;stroke:#898989;stroke-miterlimit:10;}
+  .st4{font-family:'Courier', Arial;}
+  .st5{font-size:55px;}
+  .st6{fill:#F7F6F5;stroke:#F7F6F5;stroke-width:0.25;stroke-miterlimit:10;}
+  .st7{font-family: kelly-slab, Arial;}
+  .st8{font-size:45px;}
+  .st9{letter-spacing:2.6;}
+  .st10{font-family: dancing-script, Arial;}
+  .st11{font-family: lobster, Arial;}
+  .st12{font-size:75.4598px;}
+  .st13{fill:#353659;}
+  .st14{font-family:cabin, Arial;}
+  .st15{font-size:28.2251px;}
+  .st16{font-family:cabin, Arial;}
+  .st17{fill:none;}
+  .st18{fill:#CEB995;}
+  .st19{font-size:18px;}
+  .st20{fill:#035E6D;}
+  .st21{enable-background:new;}
+  .st22{fill:#FCDAA9;}
+  .st24{fill:#EAE9E8;}
+  .st25{fill:#D1652F;}
+  .st26{fill:#C5023C;}
+  .st27{fill:#E5E4E3;}
+
+ul{
+  list-style: none;
+}
+
+[class$="title"] text {
+    font-size: 20px;
+  font-family: cabin-condensed, Arial, sans-serif;
+}
+
+@supports(animation: slideDown) {
+  [class$="title"] {
+    animation: slideDown ease-in-out .5s forwards;
+    animation-iteration-count: 1;
+    transform-origin: center;
+  }
+}
+
+[id$="activity"]{
+  opacity: 0;
+  visibility: hidden;
+}
+
+@supports(animation: slideUp) {
+   a:hover [class$="title"] , a:focus [class$="title"] {
+    animation: slideUp ease-in-out .5s forwards;
+    animation-iteration-count: 1;
+    transform-origin: center;
+  }
+}
+
+a:hover [id$="activity"],  a:focus [id$="activity"]{
+    opacity: 1;
+  visibility: visible;
+}
+
+a:focus [class*="time-circle"], a:hover [class*="time-circle"]{
+  stroke:black;
+  stroke-width:5;
+  paint-order:stroke;
+}
+
+.offscreen{
+    position: absolute!important;
+    font-size: 0px;
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+    clip-path: polygon(0 0,0 0,0 0,0 0);
+}

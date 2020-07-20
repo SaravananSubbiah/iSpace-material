@@ -1,8 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Inject} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBar} from '@angular/material';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
+export interface DialogData {
+  name: string;
+}
 /**
  * @title Stepper with editable steps
  */
@@ -18,7 +22,10 @@ export class Register2Component implements OnInit {
 
   constructor(
     private _formBuilder: FormBuilder,
-    private snackBar: MatSnackBar) {}
+    private snackBar: MatSnackBar,
+    public dialogRef: MatDialogRef<Register2Component>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData
+    ) {}
 
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({

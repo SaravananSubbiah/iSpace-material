@@ -1,15 +1,20 @@
+<mat-card fxLayout="column" fxLayoutAlign="center center">
+    <mat-card-header>
+      <mat-card-title>Dashboard</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <!-- put the form here -->
+      <ispace-svg></ispace-svg>
+    </mat-card-content>
+    <mat-card-actions>
+      <!-- put buttons here -->
+      <button mat-raised-button color="primary" (click)="openBottomSheet()">
+        Take me a Tour
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  <!--
 <div fxLayout="column" fxLayoutAlign="start center">
-  <div
-    fxLayout="column"
-    fxLayoutAlign="space-between center"
-    class="home-backdrop"
-  >
-    <img
-      src="./../../assets/images/home.png"
-      class="md-card-image"
-      alt="image caption"
-    />
-  </div>
   <ispace-more-links></ispace-more-links>
   <section
     fxLayout="row"
@@ -22,7 +27,9 @@
     <ispace-card [cardInput]="'highlights'"></ispace-card>
     <ispace-card [cardInput]="'rules'"></ispace-card>
   </section>
-  <!-- <section fxLayout="row" fxLayoutGap="0.1" fxLayoutAlign=" center">
+ <section fxLayout="row" fxLayoutGap="0.1" fxLayoutAlign=" center">
         <p *ngFor="let content of fillerContent">{{ content }}</p>
-      </section> -->
+      </section>
+      <!--
 </div>
+-->

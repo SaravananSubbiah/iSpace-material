@@ -9,12 +9,13 @@
           <div fxLayout="column" fxLayoutGap="3" fxLayoutAlign="center center">
            <div>Location : Zone1, 1st parking,</div>
            <div class="car"><mat-icon >local_car_wash</mat-icon></div>
-           <div>TimeStamp : {{spot.timestamp}}</div>
+           <div>Time Stamp : {{(spot.timestamp * 1000) | date :'medium'}}</div>
           </div>
         </mat-card-content>
         <mat-card-actions fxLayout="row" fxLayoutAlign="space-around">
             <button (click)="vote(true)" mat-fab [disabled]="upVote">+</button>
             <button (click)="vote(false)" mat-fab [disabled]="downVote">-</button>
+            <button (click)="openHistoryDialog()" mat-fab (click)="openHistoryDialog()">History</button>
         </mat-card-actions>
       </mat-card>
   </section>

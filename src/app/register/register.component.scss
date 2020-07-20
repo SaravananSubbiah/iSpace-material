@@ -36,3 +36,7 @@
 }
 
 
+::ng-deep .mat-dialog-container {
+  padding: 4px !important;
+  background: green;
+}

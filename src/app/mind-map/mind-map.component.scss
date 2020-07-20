@@ -1,122 +1,114 @@
-.example-container {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+@keyframes slideDown{
+  0% {
+    transform: translate(0px,0px) ;
   }
-  
-  p {
-    padding: 15px;
+  100% {
+    transform: translate(0px,75px) ;
   }
-  
-  .example-is-mobile .example-toolbar {
-    position: fixed;
-    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
-    z-index: 2;
-  }
-  
-  h1.example-app-name {
-    margin-left: 8px;
-  }
-  
-  .example-sidenav-container {
-    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
-       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
-    flex: 1;
-  }
-  
-  .example-is-mobile .example-sidenav-container {
-    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
-       `<body>` to be our scrolling element for mobile layouts. */
-    flex: 1 0 auto;
-  }
-  
-  @import url('https://fonts.googleapis.com/css?family=Droid+Serif');
-
-body {background: #CCC; font-family: 'Droid Serif', serif; color:#000;}
-a   {text-decoration:none; color:#000;}
-
-svg{z-index:-1;}
-
-.alert{display:none;}
-
-.js-mindmap-active a.node {
-    background: #fff ;
-    border: 1px solid #f0f0f0;
-    -webkit-border-radius: 2rem;
-    -moz-border-radius: 2rem;
-    border-radius: 2rem;
-    padding: 2rem;
 }
-.js-mindmap-active a.node.active {
-    font-size:2rem;
-    margin-left: -2rem;
-    margin-top: -2rem;
-}
-.js-mindmap-active a.node.activeparent {
-    padding:5px 10px !important;
-    border-width:5px !important;
-    background:#cccccc;
+
+
+@keyframes slideUp{
+  0% {
+    transform: translate(0px,75px) ;
+  }
+  100% {
+    transform:  translate(0px,0px) ;
+  }
 }
 
 
 /*
-.js-mindmap-active a.node {
-background:red;
-border: 2px solid white;
--webkit-border-radius: 60px;
--moz-border-radius: 60px;
-border-radius: 60px;
-width: 120px;
-height: 60px;
-padding: 30px 0px;
-text-align:center;
-}
-.js-mindmap-active a.node.active {
-border-width:5px !important;
-}
-.js-mindmap-active a.node.activeparent {
-border-width:5px !important;
-background:#8B0000;
-}
-
+stuff here
 */
-.js-mindmap-active .node.orange {
-  background:#f89a3a; 
-}
-.js-mindmap-active .node.green {
-  background:#92c63d; 
-}
-.js-mindmap-active .node.blue {
-  background:#4688c2; 
-}
-.js-mindmap-active .node.purple {
-  background:#6b5ba6; 
-}
-.js-mindmap-active .node.red {
-  background:#c64d44; 
+
+
+body {
+    font-family: cabin, Arial, sans-serif;
+    background: #f9f9f9;
+    font-weight: 300;
+    font-size: 15px;
+    color: #333;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding: 0;
+  margin: 0;
 }
 
-.alert {
-   		padding: 20px;
-   		background-color: red;
-   		color: white;
-	}
 
-	.closebtn {
-   		margin-left: 15px;
-   		color: white;
-   		font-weight: bold;
-   		float: right;
-   		font-size: 22px;
-   		line-height: 20px;
-   		cursor: pointer;
-   		transition: 0.3s;
-	}
+.st0{fill:#BBB8BF;}
+  .st1{fill:#663399;}
+  .st2{fill:#FFFFFF;}
+  .st3{fill:#898989;stroke:#898989;stroke-miterlimit:10;}
+  .st4{font-family:'Courier', Arial;}
+  .st5{font-size:55px;}
+  .st6{fill:#F7F6F5;stroke:#F7F6F5;stroke-width:0.25;stroke-miterlimit:10;}
+  .st7{font-family: kelly-slab, Arial;}
+  .st8{font-size:45px;}
+  .st9{letter-spacing:2.6;}
+  .st10{font-family: dancing-script, Arial;}
+  .st11{font-family: lobster, Arial;}
+  .st12{font-size:75.4598px;}
+  .st13{fill:#353659;}
+  .st14{font-family:cabin, Arial;}
+  .st15{font-size:28.2251px;}
+  .st16{font-family:cabin, Arial;}
+  .st17{fill:none;}
+  .st18{fill:#CEB995;}
+  .st19{font-size:18px;}
+  .st20{fill:#035E6D;}
+  .st21{enable-background:new;}
+  .st22{fill:#FCDAA9;}
+  .st24{fill:#EAE9E8;}
+  .st25{fill:#D1652F;}
+  .st26{fill:#C5023C;}
+  .st27{fill:#E5E4E3;}
 
-	.closebtn:hover {
-   		color: black;
-	}
+ul{
+  list-style: none;
+}
+
+[class$="title"] text {
+    font-size: 20px;
+  font-family: cabin-condensed, Arial, sans-serif;
+}
+
+@supports(animation: slideDown) {
+  [class$="title"] {
+    animation: slideDown ease-in-out .5s forwards;
+    animation-iteration-count: 1;
+    transform-origin: center;
+  }
+}
+
+[id$="activity"]{
+  opacity: 0;
+  visibility: hidden;
+}
+
+@supports(animation: slideUp) {
+   a:hover [class$="title"] , a:focus [class$="title"] {
+    animation: slideUp ease-in-out .5s forwards;
+    animation-iteration-count: 1;
+    transform-origin: center;
+  }
+}
+
+a:hover [id$="activity"],  a:focus [id$="activity"]{
+    opacity: 1;
+  visibility: visible;
+}
+
+a:focus [class*="time-circle"], a:hover [class*="time-circle"]{
+  stroke:black;
+  stroke-width:5;
+  paint-order:stroke;
+}
+
+.offscreen{
+    position: absolute!important;
+    font-size: 0px;
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+    clip-path: polygon(0 0,0 0,0 0,0 0);
+}
